@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "buildDocker": "ng build --prod --build-optimizer && docker build --rm -t my/dream-app ."	
+    "productionImage": "ng build --prod --build-optimizer && docker build --rm -f Dockerfile.prod -t my/dream-app:production .",
+    "devImage": "ng build --prod --build-optimizer && docker build --rm  -t my/dream-app:latest ."	
   },
   "private": true,
   "dependencies": {
