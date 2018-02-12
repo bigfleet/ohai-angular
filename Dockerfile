@@ -1,14 +1,14 @@
 FROM node:8
 
-RUN apt-get update \
-    && apt-get install -y nginx \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
-    && echo "daemon off;" >> /etc/nginx/nginx.conf
+RUN mkdir -p /srv
+	
+COPY package*.json /srv/
 
-ADD default /etc/nginx/sites-available/default
+WORKDIR /srv
 
-COPY dist /usr/share/nginx/html
+RUN npm install
 
-EXPOSE 80
-CMD ["nginx"]
+COPY . /srv/
+
+EXPOSE 4200
+CMD ["npm", "start", "--", "--host", "0.0.0.0", "--poll"]

@@ -1,5 +1,5 @@
 server {
-    server_name yoursite.com;
+    server_name _;
     root /usr/share/nginx/html;
     index index.html;
     
