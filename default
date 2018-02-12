@@ -1,6 +1,6 @@
 server {
     server_name yoursite.com;
-    root /usr/share/html;
+    root /usr/share/nginx/html;
     index index.html;
     
     location / {

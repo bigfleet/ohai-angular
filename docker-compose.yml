@@ -1,0 +1,7 @@
+version: "2"
+services:
+  dream-app:
+    build: .
+    image: my/dream-app
+    ports:
+      - "6060:80"
