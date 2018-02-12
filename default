@@ -1,0 +1,9 @@
+server {
+    server_name yoursite.com;
+    root /usr/share/html;
+    index index.html;
+    
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}
