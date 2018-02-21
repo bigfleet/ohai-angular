@@ -11,7 +11,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                sh 'mv ci/karma.conf .; npm test'
+                sh 'mv ci/karma.conf.js .; npm test'
             }
         }
         stage('Deploy') {
